@@ -24,7 +24,7 @@ public class UI {
 
     public void promptUserInput (WordGame newGame) {
         while (!newGame.isGameComplete()) {
-            System.out.print("Please guess a letter: ");
+            System.out.print(newGame.getPromptForGuess());
             String guess = keyScanner.nextLine();
             newGame.makeGuess(guess);
         }
