@@ -14,6 +14,10 @@ public abstract class WordGame {
         this.maxIncorrectGuesses = maxIncorrectGuesses;
     }
 
+    public void increaseNumberOfIncorrectGuesses () {
+        numberOfIncorrectGuesses++;
+    }
+
     public String getPromptForGuess() {
         return promptForGuess;
     }

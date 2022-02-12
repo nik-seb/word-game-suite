@@ -16,12 +16,12 @@ public class HangmanGame extends WordGame {
             lettersInWord.add(randomWord.substring(i, i+1).toUpperCase());
             lettersToDisplay.add(" _ "); // so displayed blank characters match length
         }
+        printLettersToDisplay();
     }
 
     @Override
     public void makeGuess(String letter) {
-        String thisWord = getWordToGuess();
-        int incorrectGuesses = super.getNumberOfIncorrectGuesses();
+        letter = letter.toUpperCase();
         if (lettersInWord.contains(letter)) {
             System.out.println("Correct!");
             populateLettersToDisplay(letter);
@@ -31,15 +31,15 @@ public class HangmanGame extends WordGame {
                 System.out.println("Congratulations, you won!");
             }
         } else {
-            incorrectGuesses++;
+            super.increaseNumberOfIncorrectGuesses();
             lettersNotInWord.add(letter);
             drawHangman();
             System.out.println("Oh no! There's no " + letter + " in this word.");
-            if (incorrectGuesses == super.getMaxIncorrectGuesses()) {
+            if (super.getNumberOfIncorrectGuesses() == super.getMaxIncorrectGuesses()) {
                 System.out.println("Game over!");
                 super.setGameComplete(true);
             } else {
-                System.out.println("You have " + (super.getMaxIncorrectGuesses() - incorrectGuesses) + " incorrect guesses remaining");
+                System.out.println("You have " + (super.getMaxIncorrectGuesses() - super.getNumberOfIncorrectGuesses()) + " incorrect guesses remaining");
                 System.out.println("Incorrect guesses: " + lettersNotInWord);
                 printLettersToDisplay();
             }
