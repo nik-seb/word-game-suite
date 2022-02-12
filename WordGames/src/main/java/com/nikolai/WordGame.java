@@ -17,6 +17,10 @@ public abstract class WordGame {
         return promptForGuess;
     }
 
+    public String getWordToGuess () {
+        return wordToGuess;
+    }
+
     public void setGameComplete (boolean complete) {
         this.gameComplete = complete;
     }
