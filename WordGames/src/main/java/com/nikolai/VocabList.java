@@ -20,7 +20,7 @@ public class VocabList {
     }
 
     private void setSourceFile (String file) {
-        File sourceFile = new File("src/main/resources/java-vocab.txt");
+        File sourceFile = new File(file);
         if (!sourceFile.canRead() || !sourceFile.exists() || !sourceFile.isFile()) {
             System.out.println("File error.");
         } else {
