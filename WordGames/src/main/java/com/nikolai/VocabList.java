@@ -45,6 +45,16 @@ public class VocabList {
         }
     }
 
+    public void filterVocabList (int minLength, int maxLength) {
+        List<String> filteredList = new ArrayList<>();
+        for (String word : vocab) {
+            if (word.length() <= maxLength && word.length() >= minLength) {
+                filteredList.add(word);
+            }
+        }
+        vocab = filteredList;
+    }
+
     public List<String> getVocab () {
         return new ArrayList<>(vocab);
     }
