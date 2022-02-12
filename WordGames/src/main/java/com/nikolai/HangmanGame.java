@@ -11,12 +11,16 @@ public class HangmanGame extends WordGame {
 
     public HangmanGame () {
         super("Please guess a letter: ");
+        String randomWord = super.getWordToGuess();
+        for (int i = 0; i < randomWord.length(); i++) {
+            lettersInWord.add(randomWord.substring(i, i+1));
+            lettersToDisplay.add(" _ "); // so displayed blank characters match length
+        }
     }
 
     @Override
     public void makeGuess(String guess) {
         String thisWord = getWordToGuess();
     }
-
 
 }
