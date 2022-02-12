@@ -8,7 +8,7 @@ public class MastermindGame extends WordGame {
     private List<String> lettersInWord = new ArrayList<>();
 
     public MastermindGame () {
-        super("Guess a word: ", 7, 3, 6);
+        super("Guess a word: ", 7, "src/main/resources/animal-vocab.txt", 3, 6);
         String randomWord = super.getWordToGuess();
         for (int i = 0; i < randomWord.length(); i++) {
             lettersInWord.add(randomWord.substring(i, i+1).toUpperCase());

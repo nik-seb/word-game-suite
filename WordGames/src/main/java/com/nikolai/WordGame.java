@@ -22,6 +22,14 @@ public abstract class WordGame {
         this.maxIncorrectGuesses = maxIncorrectGuesses;
     }
 
+    public WordGame (String promptForGuess, int maxIncorrectGuesses, String sourceFile, int minWordLength, int maxWordLength) {
+        VocabList vocabList = new VocabList(sourceFile);
+        vocabList.filterVocabList(minWordLength, maxWordLength);
+        this.wordToGuess = vocabList.getRandomWord();
+        this.promptForGuess = promptForGuess;
+        this.maxIncorrectGuesses = maxIncorrectGuesses;
+    }
+
     public void increaseNumberOfIncorrectGuesses () {
         numberOfIncorrectGuesses++;
     }
