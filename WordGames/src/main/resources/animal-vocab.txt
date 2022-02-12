@@ -1,0 +1,17 @@
+tiger
+elephant
+monkey
+llama
+kangaroo
+rhinoceros
+horse
+shark
+dolphin
+wolf
+coyote
+jackal
+meerkat
+lionfish
+octopus
+heron
+parrot
