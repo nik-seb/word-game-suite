@@ -7,10 +7,11 @@ public abstract class WordGame {
     private boolean gameComplete = false;
     private String promptForGuess; // to be used in UI loop, eg.: "Please guess a letter" or "Please enter your guess"
 
-    public WordGame (String promptForGuess) {
+    public WordGame (String promptForGuess, int maxIncorrectGuesses) {
         VocabList vocabList = new VocabList();
         this.wordToGuess = vocabList.getRandomWord();
         this.promptForGuess = promptForGuess;
+        this.maxIncorrectGuesses = maxIncorrectGuesses;
     }
 
     public String getPromptForGuess() {
@@ -19,6 +20,14 @@ public abstract class WordGame {
 
     public String getWordToGuess () {
         return wordToGuess;
+    }
+
+    public int getNumberOfIncorrectGuesses () {
+        return numberOfIncorrectGuesses;
+    }
+
+    public int getMaxIncorrectGuesses () {
+        return maxIncorrectGuesses;
     }
 
     public void setGameComplete (boolean complete) {
