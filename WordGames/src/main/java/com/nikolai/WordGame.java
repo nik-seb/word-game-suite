@@ -11,4 +11,14 @@ public abstract class WordGame {
         this.wordToGuess = vocabList.getRandomWord();
     }
 
+    public void setGameComplete (boolean complete) {
+        this.gameComplete = complete;
+    }
+
+    public boolean isGameComplete() {
+        return gameComplete;
+    }
+
+    public abstract void makeGuess(String guess);
+
 }

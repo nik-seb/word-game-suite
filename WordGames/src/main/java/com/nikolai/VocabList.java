@@ -10,7 +10,7 @@ import java.util.Scanner;
 public class VocabList {
     private List<String> vocab = new ArrayList<>();
 
-    // By default sets java-vocab as source file, but offers alternate constructor for user to input manually
+    // By default, sets java-vocab as source file, but offers alternate constructor for user to input manually
     public VocabList () {
         setSourceFile("src/main/resources/java-vocab.txt");
     }
@@ -47,6 +47,14 @@ public class VocabList {
 
     public List<String> getVocab () {
         return new ArrayList<>(vocab);
+    }
+
+    public String getRandomWord () {
+        int randomMin = 0;
+        int randomMax = vocab.size()-1;
+
+        double randomNumber = Math.floor(Math.random()*(randomMax-randomMin+1)+randomMin);
+        return vocab.get((int) randomNumber);
     }
 
 }
