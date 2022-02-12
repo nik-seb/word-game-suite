@@ -12,11 +12,13 @@ public class UI {
 
     private void launchGame () {
         System.out.println("Welcome to the Word Game Suite. Which game would you like to play?");
-        System.out.println("1) Hangman\n2) Word Scramble\n3)Word Mastermind");
+        System.out.println("1) Hangman\n2) Word Scramble\n3) Word Mastermind");
         String gameSelection = keyScanner.nextLine();
         WordGame newGame = null;
         if (gameSelection.equals("1") || gameSelection.toLowerCase().equals("hangman")) {
             newGame = new HangmanGame();
+        } else if (gameSelection.equals("3") || gameSelection.toLowerCase().equals("word mastermind")) {
+            newGame = new MastermindGame();
         }
         // other else ifs here
         promptUserInput(newGame);
